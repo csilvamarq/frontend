@@ -1,0 +1,25 @@
+<div class="Container">
+    <h2>
+        Lo ultimo:
+    </h2>
+    <div ngClass="songContainer" *ngIf="this.songs.length>0;else emptySongs">
+        <div ngClass="songItem" *ngFor="let song of songs;let i=index">
+            <p>{{song.nombre}}</p>
+            <p id="autor">{{song.autor}}</p>
+            <div ngClass="rateContainer">
+                <div class="like-counter">
+                    <div class="like-counter">
+                        <mat-icon (click)="toggleLike(i)" [ngClass]="{'liked': liked, 'not-liked': !liked}">
+                            favorite
+                        </mat-icon>
+                        <p>{{ song.likes }}</p>
+                    </div>
+                </div>
+            </div>
+            <img width="auto" height="200px" src="{{song.portada}}" alt="" />
+        </div>
+    </div>
+    <ng-template #emptySongs>
+        <h3>No hay canciones</h3>
+    </ng-template>
+</div>

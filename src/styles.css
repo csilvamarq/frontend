@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --link-color: #333333; /* Color predeterminado de enlaces */
+    --link-hover-color: #551A8B;
+}
+
+/* Define dark mode variables */
+[data-theme='dark'] {
+    --background-color: #333333;
+    --text-color: #ffffff;
+    --link-color: #ffffff; /* Más claro para modo oscuro */
+    --link-hover-color: #FFF;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap');
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    color: var(--link-color); /* Usa la variable para el color del texto del enlace */
+    text-decoration: none; /* Opcional: quita el subrayado */
+}
+
+a:hover {
+    color: var(--link-hover-color); /* Color al pasar el ratón por encima */
+    text-decoration: underline; /* Opcional: añade subrayado al pasar el ratón */
+}
+ul li {
+list-style-type: none;
+}
+.Container {
+    padding: 20px;
+}
+
+

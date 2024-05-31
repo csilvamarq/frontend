@@ -1,0 +1,46 @@
+<!-- audio-player.component.html -->
+<div class="audio-player-bar" *ngIf="isVisible">
+  <div class="playerSongInfoContainer">
+    <img src="{{songProps?.portada}}" width="70px" />
+    <div class="playerSongInfoContainerText">
+      <p id="nombre">{{songProps?.nombre}}</p>
+      <p id="autor">{{songProps?.autor}}</p>
+    </div>
+  </div>
+  <div class="player-controls">
+    <div class="playerControlsButtons">
+      <button (click)="this.currentTime<=this.songProps?.duracion! && this.tenSecondsLess()"
+        id="play"><mat-icon>forward_10</mat-icon></button>
+      <button (click)="this.songIndex>0? this.previousSong():null"
+        ngClass="{{this.songIndex!=0? '':'disabled'}}" id="play"><mat-icon
+          ngClass="{{this.songIndex!=0? '':'disabled'}}">skip_previous</mat-icon></button>
+      <button id="play" (click)="togglePlayPause()">
+        <button (click)="isPlaying ? pause() : play()"><mat-icon>{{isPlaying ? 'pause_circle' :
+            'play_circle'}}</mat-icon></button>
+      </button>
+      <button ngClass="{{this.songIndex<this.songList!.length-1? '':'disabled'}}"  (click)="this.songIndex<this.songList!.length-1? this.nextSong():null" id="play"><mat-icon ngClass="{{this.songIndex<this.songList!.length-1? '':'disabled'}}">skip_next</mat-icon></button>
+      <button (click)="this.currentTime<=this.songProps?.duracion! && this.tenSecondsMore()"
+        id="play"><mat-icon>replay_10</mat-icon></button>
+    </div>
+    <div class="playerControlContainer">
+      <div class="progress-container">
+        <span>{{ formatTime(currentTime) }}</span>
+        <input type="range" min="0" [max]="duration" [(ngModel)]="currentTime" (change)="seekAudio($event)">
+        <span>{{ formatTime(duration) }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="volume-controls">
+    <button *ngIf="!isMuted;else muteTemplate" (click)="toggleMute()">
+      <mat-icon>volume_up</mat-icon>
+    </button>
+    <ng-template #muteTemplate>
+      <button (click)="toggleMute()"><mat-icon>volume_off</mat-icon></button>
+    </ng-template>
+    <input type="range" min="0" max="1" step="0.01" [(ngModel)]="volume" (input)="setVolume($event)">
+  </div>
+  <audio #audio (timeupdate)="updateTime($event)" (loadedmetadata)="loadMetadata($event)">
+    <source [src]="audioSrc" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</div>

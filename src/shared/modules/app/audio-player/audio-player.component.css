@@ -1,0 +1,132 @@
+/* audio-player.component.css */
+.audio-player-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white; /* Fondo negro */
+  color: black; /* Texto blanco */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+}
+
+.progress-container span {
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+  accent-color: black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  background: #fff; /* Thumb blanco */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #fff; /* Thumb blanco */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 15px;
+  height: 15px;
+  background: #fff; /* Thumb blanco */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.volume-controls {
+  display: flex;
+  align-items: center;
+}
+.volume-controls mat-icon {
+  font-size: 25px !important;
+  height: 25px !important;
+  width: 25px !important;
+  cursor: pointer;
+}
+
+.fa {
+  font-size: 20px;
+}
+
+.playerControlContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.player-controls mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.playerControlsButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerControlContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+.playerSongInfoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+  text-align: center;
+}
+.playerSongInfoContainer #autor {
+  font-size: 12px;
+}
+.disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important
+}

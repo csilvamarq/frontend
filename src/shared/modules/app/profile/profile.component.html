@@ -1,0 +1,43 @@
+<div class="Container">
+    <div class="ProfileTitleContainer">
+        <h2>Mi perfil</h2>
+        <div>
+            <button class="MatIconButton" mat-icon-button (click)="onIconClick()">
+                <p>Nueva<mat-icon [ngStyle]="{'color': darkModeEnabled ? '#fff' : '#000'}">add_to_queue</mat-icon></p>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="songs.length > 0;else other_content">
+        <h3>Mis canciones</h3>
+        <div class="SongsContainerHeader">
+            <h4>Portada</h4>
+            <h4>Titulo</h4>
+            <h4>Autor</h4>
+            <h4>Duración</h4>
+            <h4>Genero</h4>
+            <h4>Fecha Lanzamiento</h4>
+            <div class="songContainerHeaderIcons">
+                <h4>Editar</h4>
+                <h4>Eliminar</h4>
+            </div>
+        </div>
+        <div class="SongsContainer">
+            <div class="songItem" (click)="onAudioElementClick(i)" *ngFor="let song of songs;let i = index">
+                <img src="{{song.portada}}" width="50px" height="50px" alt="Song image" />
+                <p>{{song.nombre}}</p>
+                <p>{{song.autor}}</p>
+                <p>{{song.duracion}}s</p>
+                <p>{{song.genero}}</p>
+                <p>{{song.fecha_lanzamiento}}</p>
+                <button (click)="onIconClick(song)"><mat-icon id="edit">mode_edit</mat-icon></button>
+                <button (click)="openDialog('0ms', '0ms',i)"><mat-icon id="delete">delete</mat-icon></button>
+            </div>
+        </div>
+    </div>
+    <ng-template #other_content>
+        <div class="SongsContainer">
+            <h3>No songs yet</h3>
+        </div>
+    </ng-template>
+    <app-audio-player></app-audio-player>
+</div>

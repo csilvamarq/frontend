@@ -1,0 +1,61 @@
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    color: #fff;
+    padding: 2rem;
+    width: fit-content;
+    gap: 50px;;
+}
+.headerContainer a {
+    text-decoration: none;
+}
+.userProfile {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 10px;
+    gap: 10px;
+    flex-direction: column;
+    
+  }
+  
+  .userImage {
+    width: 40px; /* Ajusta según necesites */
+    height: 40px; /* Ajusta según necesites */
+    border-radius: 50%; /* Hace la imagen circular */
+  }
+  
+  .userProfile {
+    position: relative;
+  }
+  
+  /* Estilos para el modal */
+  .modal {
+   float: right;
+   width: 80px; /* Ajusta el ancho del modal */
+   padding-right: 1.5%;
+   text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  /* Estilos para el contenido del modal */
+  .modal-content {
+    padding: 5px;
+    display: flex; /* Utiliza flexbox para centrar los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
+  .modal-item {
+    padding-bottom: 15px;
+  }
+  .modal-item:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }

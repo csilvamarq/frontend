@@ -1,0 +1,64 @@
+.dashboardContainer {
+    padding-left: 4rem;
+}
+.songContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.songItem {
+    border: 1px solid #000;
+    background-color:floralwhite;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+.songItem #autor {
+    font-size: 13px;
+}
+.rateContainer {
+    display: flex;
+    flex-direction: row;
+}
+.like-counter {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .rateContainer mat-icon {
+    font-size: 26px;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+  }
+  
+  .rateContainer .liked {
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  .rateContainer .not-liked {
+    color: red;
+    border: 2px solid red;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  .rateContainer p {
+    margin: 0 0 0 10px;
+    font-size: 18px;
+  }

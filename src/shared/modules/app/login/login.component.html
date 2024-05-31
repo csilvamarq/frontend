@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" (ngSubmit)="login()"  #loginForm="ngForm">
+                <p>Welcome to Misilify</p>
+				<div class="login__field">
+					<label for="username"></label>
+					<i class="login__icon fas fa-user"></i>
+					<input id="username"   type="text" [(ngModel)]="username"  [ngModelOptions]="{standalone: true}" class="login__input" required #usernameField="ngModel" placeholder="User name / Email">
+					<div *ngIf="usernameField.invalid && usernameField.touched">
+						<small *ngIf="usernameField.errors?.['required']">Username is required</small>
+					  </div>
+				</div>
+				<div class="login__field">
+					<label for="password"></label>
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" id="password" [(ngModel)]="password"  [ngModelOptions]="{standalone: true}" class="login__input" required minlength="4" #passwordField="ngModel" placeholder="Password">
+					<div *ngIf="passwordField.invalid && passwordField.touched">
+						<small *ngIf="passwordField.errors?.['required']">Password is required</small>
+						<small *ngIf="passwordField.errors?.['minlength']">Password must be at least 4 characters long</small>
+					  </div>
+				</div>
+				<button type="submit" [disabled]="loginForm.invalid" class="button login__submit">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				  </button>
+				  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+			</form>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>

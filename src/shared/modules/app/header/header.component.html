@@ -1,0 +1,27 @@
+<div class="headerContainer">
+<nav class="navContainer">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" [ngStyle]="{'color': darkModeEnabled ? '#fff' : '#000', 'cursor': 'pointer'}" (click)="toggleDarkMode()" fontIcon="lightbulb"></mat-icon>
+  <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+  <a routerLink="/profile" routerLinkActive="active">Profile</a>
+  
+  <!-- Div para el perfil del usuario -->
+</nav>
+<div class="userProfile">
+  <!-- Utiliza un button para envolver la imagen -->
+  <button  [ngStyle]="{'border':'none','border-radius':'30px'}"  (click)="toggleMenu()">
+    <img src="{{userImageUrl}}" alt="User Image" class="userImage"/>
+  </button>
+  <span [ngStyle]="{'color': darkModeEnabled ? '#fff' : '#000'}">{{userName.slice(0,userName.indexOf('@'))}}</span>
+  <!-- Modal -->
+ 
+</div>
+
+</div>
+<div class="modal" *ngIf="menuVisible">
+  <div class="modal-content">
+    <ul>
+      <li class="modal-item"><a [ngStyle]="{'color': darkModeEnabled ? '#fff' : '#000'}" (click)="logout()">Logout</a></li>
+      <li class="modal-item"><a [ngStyle]="{'color': darkModeEnabled ? '#fff' : '#000'}" href="/settings">Settings</a> </li>
+    </ul>
+  </div>
+</div>

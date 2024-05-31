@@ -1,0 +1,10 @@
+<div>
+  <div *ngIf="login; else notLoggedIn">
+    <app-header></app-header>
+    <!-- contenido solo para usuarios autenticados -->
+  </div>
+  <ng-template #notLoggedIn>
+    <!-- contenido para no autenticados -->
+  </ng-template>
+  <router-outlet></router-outlet>
+</div>

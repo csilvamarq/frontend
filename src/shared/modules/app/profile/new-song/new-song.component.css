@@ -1,0 +1,89 @@
+.newSongContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .newSongContainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .newSongContainer .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .newSongContainer .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .newSongContainer .form-group input[type="text"],
+  .newSongContainer .form-group input[type="number"],
+  .newSongContainer .form-group input[type="date"],
+  .newSongContainer .form-group input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .newSongContainer .form-group input[type="text"]:focus,
+  .newSongContainer .form-group input[type="number"]:focus,
+  .newSongContainer .form-group input[type="date"]:focus,
+  .newSongContainer .form-group input[type="file"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    outline: none;
+  }
+  
+  .newSongContainer .form-group .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .newSongContainer button[type="submit"],
+  .newSongContainer button[type="button"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newSongContainer button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+  }
+  
+  .newSongContainer button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .newSongContainer button[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .newSongContainer mat-dialog-actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .newSongContainer mat-dialog-actions button {
+    margin: 0 5px;
+  }
